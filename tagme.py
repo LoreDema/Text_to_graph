@@ -10,7 +10,7 @@ import json
 import sys
 
 
-def main(key, input_folder, output_folder, lang='it'):
+def tag(key, input_folder, output_folder, lang='it', abstract=True, categories=True):
     if not input_folder.endswith('/'):
         input_folder += '/'
     if not output_folder.endswith('/'):
@@ -24,8 +24,8 @@ def main(key, input_folder, output_folder, lang='it'):
             values = {'key': key,
                       'text': text.encode('utf-8'),
                       'lang': lang,
-                      'include_abstract': 'true',
-                      'include_categories': 'true'}
+                      'include_abstract': abstract,
+                      'include_categories': categories}
 
             data = urllib.urlencode(values)
             req = urllib2.Request(url, data)
@@ -37,6 +37,6 @@ def main(key, input_folder, output_folder, lang='it'):
 
 if __name__ == '__main__':
     try:
-        main(sys.argv[1], sys.argv[2], sys.argv[3], lang=sys.argv[4])
+        tag(sys.argv[1], sys.argv[2], sys.argv[3], lang=sys.argv[4])
     except IndexError:
-        main(sys.argv[1], sys.argv[2], sys.argv[3])
+        tag(sys.argv[1], sys.argv[2], sys.argv[3])

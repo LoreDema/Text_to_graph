@@ -13,7 +13,14 @@ def main():
     # graph.save_graph('graph.pickle')
 
     graph.load_graph('graph.pickle')
-    reletions = graph.get_relations('Luigi_Cadorna', 'Armando_Diaz')
+    # relations = graph.get_relations('Luigi_Cadorna', 'Armando_Diaz')
+    # degree_distribution = graph.degree_distribution()
+    print graph.components()
+    print graph.average_shortest_path()
+    # print graph.clustering_coefficient()
+    # graph.closeness()
+    graph.betweenness()
+    graph.page_rank()
 
 if __name__ == '__main__':
     main()
