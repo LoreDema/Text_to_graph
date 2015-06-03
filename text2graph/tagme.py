@@ -11,6 +11,15 @@ import sys
 
 
 def tag(key, input_folder, output_folder, lang='it', abstract=True, categories=True):
+    """
+    :param key: TAGME API key, you need to get it at http://tagme.di.unipi.it/tagme_help.html
+    :param input_folder:
+    :param output_folder:
+    :param lang:
+    :param abstract:
+    :param categories:
+    :return:
+    """
     if not input_folder.endswith('/'):
         input_folder += '/'
     if not output_folder.endswith('/'):
